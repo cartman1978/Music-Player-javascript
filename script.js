@@ -7,3 +7,9 @@ const progress = document.querySelector('.progress')
 const progressContainer = document.querySelector('.progressContainer')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
+
+// Song titles
+const songs = ['tellme', 'oroflash', 'transistor']
+
+// Keep track of the songs
+let songIndex = 2
