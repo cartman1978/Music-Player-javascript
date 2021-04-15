@@ -12,4 +12,26 @@ const cover = document.querySelector('#cover')
 const songs = ['tellme', 'oroflash', 'transistor']
 
 // Keep track of the songs
-let songIndex = 2
+let songIndex = 0
+
+// Initial load song into DOM
+loadSong(songs[songIndex])
+
+// Update song details
+
+function loadSong(song) {
+    title.innerText = song
+    audio.src = `music/${song}.mp3`
+    cover.src = `image/${song}.jpg`
+}
+
+// Event listeners
+playBtn.addEventListener('click', () => {
+    const isPlaying = musicContainer.classList.contains('play')
+
+    if (isPlaying) {
+        pauseSong()
+    } else {
+        playSong()
+    }
+})
