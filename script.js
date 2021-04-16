@@ -73,6 +73,14 @@ function updateProgress(e) {
     
 }
 
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  audio.currentTime = (clickX / width) * duration;
+}
+
 // Event listeners
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play')
@@ -90,3 +98,6 @@ nextBtn.addEventListener('click', nextSong)
 
 // use html api for audio to get progress bar value
 audio.addEventListener('timeupdate', updateProgress)
+
+// when click inside progressBar will bring to that point of the song
+progressContainer.addEventListener('click', setProgress)
