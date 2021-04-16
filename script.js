@@ -104,3 +104,5 @@ audio.addEventListener('timeupdate', updateProgress)
 
 // when click inside progressBar will bring to that point of the song
 progressContainer.addEventListener('click', setProgress)
+
+audio.addEventListener('ended', nextSong)
