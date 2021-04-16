@@ -65,6 +65,14 @@ function nextSong() {
     playSong()
 }
 
+function updateProgress(e) {
+    // console.log(e.srcElement.currentTime);
+    const {duration, currentTime} = e.srcElement
+    const progressPercent = (currentTime / duration) * 100
+    progress.style.width = `${progressPercent}%`
+    
+}
+
 // Event listeners
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play')
@@ -79,3 +87,6 @@ playBtn.addEventListener('click', () => {
 // Change Song event
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
+
+// use html api for audio to get progress bar value
+audio.addEventListener('timeupdate', updateProgress)
